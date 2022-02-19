@@ -104,14 +104,14 @@ export default {
   },
   methods: {
     async getMovies() {
-      const data = axios.get('https://api.themoviedb.org/3/movie/now_playing?api_key=6edb1bf9d7e9b4f3f183bf60762db295&language=en-US&page=1')
+      const data = axios.get('https://api.themoviedb.org/3/movie/now_playing?api_key=YOUR_API_KEYanguage=en-US&page=1')
       const result = await data
       result.data.results.forEach(movie => {
         this.movies.push(movie)
       })
     },
     async searchMovies () {
-      const data = axios.get(`https://api.themoviedb.org/3/search/movie?api_key=6edb1bf9d7e9b4f3f183bf60762db295&language=en-US&page=1&query=${this.searchInput}`)
+      const data = axios.get(`https://api.themoviedb.org/3/search/movie?api_key=YOUR_API_KEY&language=en-US&page=1&query=${this.searchInput}`)
       const result = await data
       result.data.results.forEach((movie) => {
         this.searchedMovies.push(movie)
